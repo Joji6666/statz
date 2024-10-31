@@ -37,8 +37,8 @@ export function initializeState<T>(key: string, initialValue: T): void {
 }
 
 // Reactive getState with subscription
-export function useReactiveState(key) {
-  const [state, setState] = useState(() => getState(key));
+export function useReactiveState<T>(key) {
+  const [state, setState] = useState(() => getState<T>(key));
 
   useEffect(() => {
     const updateState = (newState) => setState(newState);
