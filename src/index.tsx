@@ -197,14 +197,17 @@ export function toggleDebugPanel(): void {
 function renderDebugPanel(): void {
   const debugRoot = document.getElementById("debug-root") || createDebugRoot();
 
+  // Only create the root once to avoid multiple createRoot() calls
   if (!root) {
     root = ReactDOM.createRoot(debugRoot);
   }
 
+  // Renders or unmounts the DebugPanel component based on visibility
   if (isDebugPanelVisible) {
     root.render(<DebugPanel logs={debugLogs} />);
   } else {
     root.unmount();
+    root = null; // Unmounted root, so set root to null
   }
 }
 
