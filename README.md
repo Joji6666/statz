@@ -98,17 +98,5 @@ Returns
 - State Setter Function: Function to update the global state, which accepts a new value or a function to update based on the previous value.
 
 ```javascript
-import React from "react";
-
-const CounterComponent = () => {
-  const [counter, setCounter] = counterState.useState();
-
-  return (
-    <div>
-      <p>Counter: {counter}</p>
-      <button onClick={() => setCounter((prev) => prev + 1)}>Increment</button>
-      <button onClick={() => setCounter((prev) => prev - 1)}>Decrement</button>
-    </div>
-  );
-};
+const [counter, setCounter] = useGlobalState("counter");
 ```
