@@ -12,7 +12,12 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "recoil",
+    "state",
+    "global state"
+  ],
   "author": "Joji6666",
   "license": "MIT",
   "peerDependencies": {
